@@ -1,4 +1,4 @@
-module github.com/wuwwlwwl/trivy-iac
+module github.com/nordcloud/trivy-iac
 
 go 1.20
 

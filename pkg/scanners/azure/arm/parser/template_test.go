@@ -6,9 +6,9 @@ import (
 	"testing"
 
 	"github.com/aquasecurity/defsec/pkg/types"
-	types2 "github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure"
+	types2 "github.com/nordcloud/trivy-iac/pkg/scanners/azure"
 
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure/arm/parser/armjson"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/azure/arm/parser/armjson"
 
 	"github.com/stretchr/testify/assert"
 

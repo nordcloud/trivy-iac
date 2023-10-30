@@ -2,7 +2,7 @@ package securitycenter
 
 import (
 	"github.com/aquasecurity/defsec/pkg/providers/azure/securitycenter"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/azure"
 )
 
 func Adapt(deployment azure.Deployment) securitycenter.SecurityCenter {

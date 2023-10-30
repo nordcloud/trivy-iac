@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/aquasecurity/defsec/pkg/types"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure/arm/parser/armjson"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/azure/arm/parser/armjson"
 	"k8s.io/utils/strings/slices"
 )
 

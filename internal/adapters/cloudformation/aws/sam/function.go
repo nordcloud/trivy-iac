@@ -5,7 +5,7 @@ import (
 	"github.com/aquasecurity/defsec/pkg/providers/aws/sam"
 	defsecTypes "github.com/aquasecurity/defsec/pkg/types"
 	"github.com/liamg/iamgo"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/cloudformation/parser"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/cloudformation/parser"
 )
 
 func getFunctions(cfFile parser.FileContext) (functions []sam.Function) {

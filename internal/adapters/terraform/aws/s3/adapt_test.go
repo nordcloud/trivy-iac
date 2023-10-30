@@ -8,10 +8,10 @@ import (
 	"github.com/aquasecurity/defsec/pkg/providers/aws/iam"
 	"github.com/aquasecurity/defsec/pkg/providers/aws/s3"
 	"github.com/liamg/iamgo"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/tftestutil"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/terraform/tftestutil"
-	"github.com/wuwwlwwl/trivy-iac/test/testutil"
 )
 
 func Test_PublicAccessBlock(t *testing.T) {

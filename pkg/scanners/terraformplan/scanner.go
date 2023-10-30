@@ -11,9 +11,9 @@ import (
 	"github.com/aquasecurity/defsec/pkg/scan"
 	"github.com/aquasecurity/defsec/pkg/scanners/options"
 	"github.com/bmatcuk/doublestar/v4"
-	terraformScanner "github.com/wuwwlwwl/trivy-iac/pkg/scanners/terraform"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/terraform/executor"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/terraformplan/parser"
+	terraformScanner "github.com/nordcloud/trivy-iac/pkg/scanners/terraform"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/terraform/executor"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/terraformplan/parser"
 )
 
 var tfPlanExts = []string{

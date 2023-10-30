@@ -7,8 +7,8 @@ import (
 
 	"github.com/aquasecurity/defsec/pkg/providers/google/iam"
 
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/terraform/tftestutil"
-	"github.com/wuwwlwwl/trivy-iac/test/testutil"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/tftestutil"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 )
 
 func Test_AdaptBinding(t *testing.T) {

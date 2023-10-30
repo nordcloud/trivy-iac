@@ -14,10 +14,10 @@ import (
 	"github.com/aquasecurity/defsec/pkg/terraform"
 	"github.com/aquasecurity/trivy-policies/pkg/rules"
 	"github.com/aquasecurity/trivy-policies/rules/cloud/policies/aws/iam"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/terraform/executor"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/terraform/parser"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 	"github.com/stretchr/testify/require"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/terraform/executor"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/terraform/parser"
-	"github.com/wuwwlwwl/trivy-iac/test/testutil"
 )
 
 var badRule = scan.Rule{

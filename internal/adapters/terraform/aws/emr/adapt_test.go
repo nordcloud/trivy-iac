@@ -9,8 +9,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/terraform/tftestutil"
-	"github.com/wuwwlwwl/trivy-iac/test/testutil"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/tftestutil"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 )
 
 func Test_adaptSecurityConfiguration(t *testing.T) {

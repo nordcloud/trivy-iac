@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/aquasecurity/defsec/pkg/providers/azure/storage"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/azure"
 
 	"github.com/aquasecurity/defsec/pkg/types"
 )

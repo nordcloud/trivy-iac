@@ -3,7 +3,7 @@ package network
 import (
 	"testing"
 
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/terraform/tftestutil"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/tftestutil"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

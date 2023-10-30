@@ -15,8 +15,8 @@ import (
 	"github.com/aquasecurity/defsec/pkg/types"
 	"github.com/aquasecurity/trivy-policies/pkg/rego"
 	"github.com/liamg/memoryfs"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/kubernetes/parser"
+	"github.com/nordcloud/trivy-iac/pkg/scanners"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/kubernetes/parser"
 )
 
 var _ scanners.FSScanner = (*Scanner)(nil)

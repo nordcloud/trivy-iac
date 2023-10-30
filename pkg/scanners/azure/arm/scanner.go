@@ -16,10 +16,10 @@ import (
 	"github.com/aquasecurity/defsec/pkg/types"
 	"github.com/aquasecurity/trivy-policies/pkg/rego"
 	"github.com/aquasecurity/trivy-policies/pkg/rules"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure/arm/parser"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm"
+	"github.com/nordcloud/trivy-iac/pkg/scanners"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/azure"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/azure/arm/parser"
 )
 
 var _ scanners.FSScanner = (*Scanner)(nil)

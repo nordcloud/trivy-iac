@@ -3,23 +3,23 @@ package arm
 import (
 	"context"
 
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/appservice"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/authorization"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/compute"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/container"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/database"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/datafactory"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/datalake"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/keyvault"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/monitor"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/network"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/securitycenter"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/storage"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/arm/synapse"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/appservice"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/authorization"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/compute"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/container"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/database"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/datafactory"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/datalake"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/keyvault"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/monitor"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/network"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/securitycenter"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/storage"
+	"github.com/nordcloud/trivy-iac/internal/adapters/arm/synapse"
 
 	"github.com/aquasecurity/defsec/pkg/providers/azure"
 	"github.com/aquasecurity/defsec/pkg/state"
-	scanner "github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure"
+	scanner "github.com/nordcloud/trivy-iac/pkg/scanners/azure"
 )
 
 // Adapt ...

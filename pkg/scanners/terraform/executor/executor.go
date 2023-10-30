@@ -14,7 +14,7 @@ import (
 	"github.com/aquasecurity/trivy-policies/pkg/rego"
 	"github.com/aquasecurity/trivy-policies/pkg/rules"
 	"github.com/aquasecurity/trivy-policies/pkg/types"
-	adapter "github.com/wuwwlwwl/trivy-iac/internal/adapters/terraform"
+	adapter "github.com/nordcloud/trivy-iac/internal/adapters/terraform"
 )
 
 // Executor scans HCL blocks by running all registered rules against them

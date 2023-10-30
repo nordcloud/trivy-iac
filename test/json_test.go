@@ -8,7 +8,7 @@ import (
 	"github.com/aquasecurity/defsec/pkg/severity"
 	"github.com/aquasecurity/defsec/pkg/terraform"
 	"github.com/aquasecurity/trivy-policies/pkg/rules"
-	"github.com/wuwwlwwl/trivy-iac/test/testutil"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 )
 
 func TestScanningJSON(t *testing.T) {

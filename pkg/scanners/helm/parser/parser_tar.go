@@ -12,7 +12,7 @@ import (
 	"path/filepath"
 
 	"github.com/liamg/memoryfs"
-	"github.com/wuwwlwwl/trivy-iac/pkg/detection"
+	"github.com/nordcloud/trivy-iac/pkg/detection"
 )
 
 func (p *Parser) addTarToFS(path string) (fs.FS, error) {

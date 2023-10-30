@@ -7,11 +7,11 @@ import (
 
 	"github.com/aquasecurity/defsec/pkg/providers/openstack"
 
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/terraform/tftestutil"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/tftestutil"
 
+	"github.com/nordcloud/trivy-iac/test/testutil"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wuwwlwwl/trivy-iac/test/testutil"
 )
 
 func TestFields(t *testing.T) {

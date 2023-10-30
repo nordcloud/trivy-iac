@@ -11,9 +11,9 @@ import (
 	"github.com/aquasecurity/trivy-policies/pkg/rego"
 	"github.com/aquasecurity/trivy-policies/pkg/rego/schemas"
 	"github.com/aquasecurity/trivy-policies/rules"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/wuwwlwwl/trivy-iac/test/testutil"
 )
 
 const DS006PolicyWithDockerfileSchema = `# METADATA

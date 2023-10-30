@@ -3,7 +3,7 @@ package parser
 import (
 	"testing"
 
-	"github.com/wuwwlwwl/trivy-iac/test/testutil"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 
 	"github.com/zclconf/go-cty/cty"
 

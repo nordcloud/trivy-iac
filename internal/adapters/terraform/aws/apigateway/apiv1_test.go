@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	v1 "github.com/aquasecurity/defsec/pkg/providers/aws/apigateway/v1"
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/terraform/tftestutil"
-	"github.com/wuwwlwwl/trivy-iac/test/testutil"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/tftestutil"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 )
 
 func Test_adaptAPIMethodsV1(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/aquasecurity/defsec/pkg/scanners/options"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/azure"
 
 	"github.com/stretchr/testify/assert"
 

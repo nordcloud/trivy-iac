@@ -3,7 +3,7 @@ package parser
 import (
 	"strings"
 
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/cloudformation/cftypes"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/cloudformation/cftypes"
 )
 
 func ResolveSplit(property *Property) (resolved *Property, success bool) {

@@ -3,7 +3,7 @@ package cloudwatch
 import (
 	"github.com/aquasecurity/defsec/pkg/providers/aws/cloudwatch"
 	"github.com/aquasecurity/defsec/pkg/types"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/cloudformation/parser"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/cloudformation/parser"
 )
 
 func getLogGroups(ctx parser.FileContext) (logGroups []cloudwatch.LogGroup) {

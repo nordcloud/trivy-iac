@@ -6,16 +6,16 @@ import (
 
 	"github.com/aquasecurity/defsec/pkg/scan"
 	"github.com/aquasecurity/defsec/pkg/scanners/options"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure/arm"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/cloudformation"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/dockerfile"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/helm"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/json"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/kubernetes"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/terraform"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/toml"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/yaml"
+	"github.com/nordcloud/trivy-iac/pkg/scanners"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/azure/arm"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/cloudformation"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/dockerfile"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/helm"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/json"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/kubernetes"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/terraform"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/toml"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/yaml"
 )
 
 type nestableFSScanners interface {

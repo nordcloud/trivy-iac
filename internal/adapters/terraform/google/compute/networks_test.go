@@ -7,8 +7,8 @@ import (
 
 	"github.com/aquasecurity/defsec/pkg/providers/google/compute"
 
-	"github.com/wuwwlwwl/trivy-iac/internal/adapters/terraform/tftestutil"
-	"github.com/wuwwlwwl/trivy-iac/test/testutil"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/tftestutil"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 )
 
 func Test_adaptNetworks(t *testing.T) {

@@ -9,13 +9,13 @@ import (
 	"strings"
 
 	"github.com/aquasecurity/defsec/pkg/debug"
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/azure"
 
 	"github.com/aquasecurity/defsec/pkg/scanners/options"
 
 	"github.com/aquasecurity/defsec/pkg/types"
 
-	"github.com/wuwwlwwl/trivy-iac/pkg/scanners/azure/arm/parser/armjson"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/azure/arm/parser/armjson"
 )
 
 type Parser struct {
