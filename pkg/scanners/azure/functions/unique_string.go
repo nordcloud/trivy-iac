@@ -1,7 +1,7 @@
 package functions
 
 import (
-	uniquestring "github.com/wuwwlwwl/go-unique-string"
+	uniquestring "github.com/nordcloud/go-unique-string"
 )
 
 func UniqueString(args ...interface{}) interface{} {

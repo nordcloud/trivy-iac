@@ -670,6 +670,8 @@ github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 h1:C3w9PqII01/Oq
 github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822/go.mod h1:+n7T8mK8HuQTcFwEeznm/DIxMOiR9yIdICNftLE1DvQ=
 github.com/mwitkow/go-conntrack v0.0.0-20161129095857-cc309e4a2223/go.mod h1:qRWi+5nqEBWmkhHvq77mSJWrCKwh8bxhgT7d/eI7P4U=
 github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e/go.mod h1:zD1mROLANZcx1PVRCS0qkT7pwLkGfwJo4zjcN/Tysno=
+github.com/nordcloud/go-unique-string v0.0.0-20231030084602-8ba830d889dd h1:IXD75JRqBWtdFjIMddXE6Kr+9mzE5UOI29UamnQoQBo=
+github.com/nordcloud/go-unique-string v0.0.0-20231030084602-8ba830d889dd/go.mod h1:Fu/hZh3TAJY00jeVTIOUXqHmP++HcpZHYUZipi5sWiM=
 github.com/olekukonko/tablewriter v0.0.5 h1:P2Ga83D34wi1o9J6Wh1mRuqd4mF/x/lgBS7N7AbDhec=
 github.com/olekukonko/tablewriter v0.0.5/go.mod h1:hPp6KlRPjbx+hW8ykQs1w3UBbZlj6HuIJcUGPhkA7kY=
 github.com/onsi/ginkgo/v2 v2.9.4 h1:xR7vG4IXt5RWx6FfIjyAtsoMAtnc3C/rFXBBd2AjZwE=
@@ -766,8 +768,6 @@ github.com/tomwright/dasel v1.27.3 h1:vnoaZsG8hbubcdh2IioRVjOt2DTg+txLtDGKQn1cdA
 github.com/tomwright/dasel v1.27.3/go.mod h1:/rESPoTvQxRkrtEH8lhSU8CB2UWPh/bM0kDrKVGf1kQ=
 github.com/ulikunitz/xz v0.5.10 h1:t92gobL9l3HE202wg3rlk19F6X+JOxl9BBrCCMYEYd8=
 github.com/ulikunitz/xz v0.5.10/go.mod h1:nbz6k7qbPmH4IRqmfOplQw/tblSgqTqBwxkY0oWt/14=
-github.com/wuwwlwwl/go-unique-string v0.0.0-20230828031914-78532c13780c h1:u6w3IIi93ExPb14nmRMbzILQ3ZBfQArB+xlYMdt0/+A=
-github.com/wuwwlwwl/go-unique-string v0.0.0-20230828031914-78532c13780c/go.mod h1:1pg4PfB5Yg6AE2ughgX+vLGeIyUDJfDi38FcKq0L/IU=
 github.com/xanzy/ssh-agent v0.3.3 h1:+/15pJfg/RsTxqYcX6fHqOXZwwMP+2VyYWJeWM2qQFM=
 github.com/xanzy/ssh-agent v0.3.3/go.mod h1:6dzNDKs0J9rVPHPhaGCukekBHKqfl+L3KghI1Bc68Uw=
 github.com/xeipuuv/gojsonpointer v0.0.0-20180127040702-4e3ac2762d5f/go.mod h1:N2zxlSyiKSe5eX1tZViRH5QA0qijqEDrYZiPEAiq3wU=

@@ -38,8 +38,8 @@ require (
 )
 
 require (
+	github.com/nordcloud/go-unique-string v0.0.0-20231030084602-8ba830d889dd
 	github.com/tomwright/dasel v1.27.3
-	github.com/wuwwlwwl/go-unique-string v0.0.0-20230828031914-78532c13780c
 )
 
 require (
