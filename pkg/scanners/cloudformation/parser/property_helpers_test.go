@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/aquasecurity/defsec/pkg/types"
-	"github.com/aquasecurity/trivy-iac/pkg/scanners/cloudformation/cftypes"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/cloudformation/cftypes"
 	"github.com/stretchr/testify/assert"
 )
 

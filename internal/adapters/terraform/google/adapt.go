@@ -3,14 +3,14 @@ package google
 import (
 	"github.com/aquasecurity/defsec/pkg/providers/google"
 	"github.com/aquasecurity/defsec/pkg/terraform"
-	"github.com/aquasecurity/trivy-iac/internal/adapters/terraform/google/bigquery"
-	"github.com/aquasecurity/trivy-iac/internal/adapters/terraform/google/compute"
-	"github.com/aquasecurity/trivy-iac/internal/adapters/terraform/google/dns"
-	"github.com/aquasecurity/trivy-iac/internal/adapters/terraform/google/gke"
-	"github.com/aquasecurity/trivy-iac/internal/adapters/terraform/google/iam"
-	"github.com/aquasecurity/trivy-iac/internal/adapters/terraform/google/kms"
-	"github.com/aquasecurity/trivy-iac/internal/adapters/terraform/google/sql"
-	"github.com/aquasecurity/trivy-iac/internal/adapters/terraform/google/storage"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/google/bigquery"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/google/compute"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/google/dns"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/google/gke"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/google/iam"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/google/kms"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/google/sql"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/google/storage"
 )
 
 func Adapt(modules terraform.Modules) google.Google {

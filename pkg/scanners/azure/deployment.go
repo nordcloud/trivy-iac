@@ -1,9 +1,12 @@
 package azure
 
 import (
+	"fmt"
 	"os"
+	"strings"
 
 	"github.com/aquasecurity/defsec/pkg/types"
+	"github.com/tomwright/dasel"
 )
 
 type Deployment struct {
@@ -11,6 +14,7 @@ type Deployment struct {
 	TargetScope Scope
 	Parameters  []Parameter
 	Variables   []Variable
+	Copy        *Copy
 	Resources   []Resource
 	Outputs     []Output
 }
@@ -29,16 +33,39 @@ type Variable struct {
 type Output Variable
 
 type Resource struct {
-	Metadata   types.Metadata
-	APIVersion Value
-	Type       Value
-	Kind       Value
-	Name       Value
-	Location   Value
-	Tags       Value
-	Sku        Value
-	Properties Value
-	Resources  []Resource
+	Metadata             types.Metadata
+	Condition            Value
+	APIVersion           Value
+	Type                 Value
+	Kind                 Value
+	Name                 Value
+	Location             Value
+	SubscriptionId       Value
+	ResourceGroup        Value
+	Tags                 Value
+	Sku                  Value
+	DeploymentProperties DeploymentProperties
+	Copy                 *Copy
+	Properties           Value
+	Resources            []Resource
+}
+
+type Copy struct {
+	Name      Value
+	Mode      Value
+	BatchSize Value
+	Count     Value
+}
+
+type DeploymentProperties struct {
+	Mode                        Value
+	ParameterValues             map[string]Value
+	ExpressionEvaluationOptions *ExpressionEvaluationOptions
+	Deployment                  *Deployment
+}
+
+type ExpressionEvaluationOptions struct {
+	Scope Value
 }
 
 type PropertyBag struct {
@@ -77,24 +104,52 @@ func (r *Resource) GetResourcesByType(t string) []Resource {
 	return resources
 }
 
-func (d *Deployment) GetParameter(parameterName string) interface{} {
+func (d *Deployment) SetParameter(name string, value interface{}) error {
+	for index, param := range d.Parameters {
+		if param.Variable.Name == name {
+			if v, ok := value.(Value); ok {
+				d.Parameters[index].Variable.Value = v
+			} else {
+				d.Parameters[index].Variable.Value = NewValue(value, param.Value.GetMetadata())
+			}
+
+			return nil
+		}
+	}
+	return fmt.Errorf("parameter %s not found in the deployment", name)
+}
+
+func (d *Deployment) GetParameter(name string) interface{} {
+
+	parameterName, propertyName := d.getPropertyName(name)
 
 	for _, parameter := range d.Parameters {
 		if parameter.Name == parameterName {
-			return parameter.Value.Raw()
+			result, err := d.getPropertyValue(parameter.Value, propertyName)
+			if err != nil {
+				fmt.Printf("parse parameter %s failed, %v", name, err)
+			}
+			return result
 		}
 	}
 	return nil
 }
 
-func (d *Deployment) GetVariable(variableName string) interface{} {
+func (d *Deployment) GetVariable(name string) interface{} {
+
+	varName, propertyName := d.getPropertyName(name)
 
 	for _, variable := range d.Variables {
-		if variable.Name == variableName {
-			return variable.Value.Raw()
+		if variable.Name == varName {
+			result, err := d.getPropertyValue(variable.Value, propertyName)
+			if err != nil {
+				fmt.Printf("parse variables %s failed, %v", name, err)
+			}
+			return result
 		}
 	}
 	return nil
+
 }
 
 func (d *Deployment) GetEnvVariable(envVariableName string) interface{} {
@@ -176,4 +231,59 @@ func (d *Deployment) GetDeployment() interface{} {
 	}
 
 	return deploymentShell
+}
+
+func (d *Deployment) getPropertyName(name string) (string, string) {
+	parameterName := name
+	propertyName := ""
+	indexDot := strings.Index(name, ".")
+	indexBracket := strings.Index(name, "[")
+	index := indexDot
+	if (indexBracket < indexDot || index < 0) && indexBracket >= 0 {
+		index = indexBracket
+	}
+	if index >= 0 {
+		parameterName = name[:index]
+		propertyName = name[index:]
+		propertyName = strings.ReplaceAll(propertyName, "[", ".[")
+	}
+	return parameterName, propertyName
+}
+
+func (d *Deployment) getPropertyValue(v Value, property string) (interface{}, error) {
+	resolver := resolver{
+		deployment: d,
+	}
+
+	rawValue := v.Raw()
+
+	value := v
+	var err error
+	for value.Kind == KindExpression {
+		value, err = resolver.resolveExpressionString(v.AsExpressionString(), types.NewTestMetadata())
+		if err != nil {
+			return nil, fmt.Errorf("resolve expression %s failed, %v", v.AsExpressionString(), err)
+		}
+		rawValue = value.Raw()
+	}
+
+	if property == "" {
+		return rawValue, nil
+	}
+	paramNode := dasel.New(rawValue)
+	result, err := paramNode.Query(property)
+	if err != nil {
+		return nil, err
+
+	}
+	value = NewValue(result.InterfaceValue(), types.NewTestMetadata())
+	if value.Kind == KindExpression {
+		value, err = resolver.resolveExpressionString(value.AsExpressionString(), types.NewTestMetadata())
+		if err != nil {
+			return nil, fmt.Errorf("resolve expression %s failed, %v", value.AsExpressionString(), err)
+		}
+		return value.Raw(), nil
+	}
+	return result.InterfaceValue(), nil
+
 }

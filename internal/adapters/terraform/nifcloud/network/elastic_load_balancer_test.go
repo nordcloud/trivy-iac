@@ -6,9 +6,9 @@ import (
 	"github.com/aquasecurity/defsec/pkg/providers/nifcloud/network"
 	defsecTypes "github.com/aquasecurity/defsec/pkg/types"
 
-	"github.com/aquasecurity/trivy-iac/internal/adapters/terraform/tftestutil"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/tftestutil"
 
-	"github.com/aquasecurity/trivy-iac/test/testutil"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 )
 
 func Test_adaptElasticLoadBalancers(t *testing.T) {

@@ -1,11 +1,12 @@
 package azure
 
 import (
+	"fmt"
 	"strings"
 	"time"
 
 	"github.com/aquasecurity/defsec/pkg/types"
-	"github.com/aquasecurity/trivy-iac/pkg/scanners/azure/arm/parser/armjson"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/azure/arm/parser/armjson"
 	"k8s.io/utils/strings/slices"
 )
 
@@ -74,8 +75,14 @@ func NewValue(value interface{}, metadata types.Metadata) Value {
 			v.rMap[key] = val
 		}
 	case string:
-		v.Kind = KindString
-		v.rLit = ty
+		if strings.HasPrefix(ty, "[") && strings.HasSuffix(ty, "]") {
+			v.Kind = KindExpression
+			v.rLit = ty[1 : len(ty)-1]
+		} else {
+			v.Kind = KindString
+			v.rLit = ty
+		}
+
 	case int, int64, int32, float32, float64, int8, int16, uint8, uint16, uint32, uint64:
 		v.Kind = KindNumber
 		v.rLit = ty
@@ -212,6 +219,15 @@ func (v Value) AsString() string {
 	return v.rLit.(string)
 }
 
+func (v Value) AsExpressionString() string {
+
+	if v.Kind != KindExpression {
+		return ""
+	}
+
+	return v.rLit.(string)
+}
+
 func (v Value) AsBool() bool {
 	v.Resolve()
 	if v.Kind != KindBoolean {
@@ -304,11 +320,19 @@ func (v Value) AsList() []Value {
 func (v Value) Raw() interface{} {
 	switch v.Kind {
 	case KindArray:
-		// TODO: recursively build raw array
-		return nil
+		result := []interface{}{}
+		for _, val := range v.rArr {
+			result = append(result, val.Raw())
+		}
+		return result
 	case KindObject:
-		// TODO: recursively build raw object
-		return nil
+		result := make(map[string]interface{})
+		for key, val := range v.rMap {
+			result[key] = val.Raw()
+		}
+		return result
+	case KindExpression:
+		return fmt.Sprintf("[%s]", v.rLit)
 	default:
 		return v.rLit
 	}

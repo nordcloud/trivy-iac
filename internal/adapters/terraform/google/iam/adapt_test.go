@@ -6,8 +6,8 @@ import (
 	defsecTypes "github.com/aquasecurity/defsec/pkg/types"
 
 	"github.com/aquasecurity/defsec/pkg/providers/google/iam"
-	"github.com/aquasecurity/trivy-iac/internal/adapters/terraform/tftestutil"
-	"github.com/aquasecurity/trivy-iac/test/testutil"
+	"github.com/nordcloud/trivy-iac/internal/adapters/terraform/tftestutil"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -1,5 +1,10 @@
 package functions
 
+import (
+	"fmt"
+	"strings"
+)
+
 type DeploymentData interface {
 	GetParameter(name string) interface{}
 	GetVariable(variableName string) interface{}
@@ -53,11 +58,7 @@ func Variables(varProvider DeploymentData, args ...interface{}) interface{} {
 		return nil
 	}
 
-	varName, ok := args[0].(string)
-	if !ok {
-		return nil
-	}
-	return varProvider.GetVariable(varName)
+	return varProvider.GetVariable(getName(args...))
 }
 
 func Parameters(paramProvider DeploymentData, args ...interface{}) interface{} {
@@ -65,11 +66,16 @@ func Parameters(paramProvider DeploymentData, args ...interface{}) interface{} {
 		return nil
 	}
 
-	paramName, ok := args[0].(string)
-	if !ok {
-		return nil
+	return paramProvider.GetParameter(getName(args...))
+}
+
+func getName(args ...interface{}) string {
+	props := []string{}
+
+	for _, arg := range args {
+		props = append(props, fmt.Sprintf("%v", arg))
 	}
 
-	return paramProvider.GetParameter(paramName)
+	return strings.Join(props, "")
 
 }

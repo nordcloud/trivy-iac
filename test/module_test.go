@@ -12,11 +12,11 @@ import (
 	"github.com/aquasecurity/defsec/pkg/scanners/options"
 	"github.com/aquasecurity/defsec/pkg/severity"
 	"github.com/aquasecurity/defsec/pkg/terraform"
-	"github.com/aquasecurity/trivy-iac/pkg/scanners/terraform/executor"
-	"github.com/aquasecurity/trivy-iac/pkg/scanners/terraform/parser"
-	"github.com/aquasecurity/trivy-iac/test/testutil"
 	"github.com/aquasecurity/trivy-policies/pkg/rules"
 	"github.com/aquasecurity/trivy-policies/rules/cloud/policies/aws/iam"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/terraform/executor"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/terraform/parser"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 	"github.com/stretchr/testify/require"
 )
 

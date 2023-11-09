@@ -7,9 +7,9 @@ import (
 	"github.com/aquasecurity/defsec/pkg/scan"
 	"github.com/aquasecurity/defsec/pkg/scanners/options"
 	"github.com/aquasecurity/defsec/pkg/terraform"
-	tfScanner "github.com/aquasecurity/trivy-iac/pkg/scanners/terraform"
-	"github.com/aquasecurity/trivy-iac/pkg/scanners/terraform/parser"
-	"github.com/aquasecurity/trivy-iac/test/testutil"
+	tfScanner "github.com/nordcloud/trivy-iac/pkg/scanners/terraform"
+	"github.com/nordcloud/trivy-iac/pkg/scanners/terraform/parser"
+	"github.com/nordcloud/trivy-iac/test/testutil"
 	"github.com/stretchr/testify/require"
 )
 
