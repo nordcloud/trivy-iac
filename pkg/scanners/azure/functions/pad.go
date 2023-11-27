@@ -1,19 +1,20 @@
 package functions
 
-import "strings"
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
 
 func PadLeft(args ...interface{}) interface{} {
 	if len(args) != 3 {
 		return ""
 	}
 
-	input, ok := args[0].(string)
-	if !ok {
-		return ""
-	}
+	input := fmt.Sprintf("%v", args[0])
 
-	length, ok := args[1].(int)
-	if !ok {
+	length, err := strconv.Atoi(fmt.Sprintf("%v", args[1]))
+	if err != nil {
 		return ""
 	}
 

@@ -49,6 +49,15 @@ func Test_PadLeft(t *testing.T) {
 			},
 			expected: "00001234",
 		},
+		{
+			name: "pad left with int",
+			args: []interface{}{
+				2,
+				3,
+				"0",
+			},
+			expected: "002",
+		},
 	}
 
 	for _, tt := range tests {
