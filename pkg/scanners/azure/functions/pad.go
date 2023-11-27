@@ -12,11 +12,7 @@ func PadLeft(args ...interface{}) interface{} {
 
 	input, ok := args[0].(string)
 	if !ok {
-		i, ok := args[0].(int)
-		if !ok {
-			return ""
-		}
-		input = fmt.Sprintf("%d", i)
+		input = fmt.Sprintf("%v", args[0])
 	}
 
 	length, ok := args[1].(int)
