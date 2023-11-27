@@ -1,6 +1,9 @@
 package functions
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func PadLeft(args ...interface{}) interface{} {
 	if len(args) != 3 {
@@ -9,7 +12,11 @@ func PadLeft(args ...interface{}) interface{} {
 
 	input, ok := args[0].(string)
 	if !ok {
-		return ""
+		i, ok := args[0].(int)
+		if !ok {
+			return ""
+		}
+		input = fmt.Sprintf("%d", i)
 	}
 
 	length, ok := args[1].(int)
